@@ -39,16 +39,32 @@ public class Driver {
 		
 	}
 
-	public void Checkout(String title, String name)
+	public static void Rent(String title, String name)
 	{
-		if(!searchFor(title).available())
+		boolean f = false;
+		Iterator<CheckedOut> itr = COlist.iterator();
+		if(!searchForD(title).available())
 		{
 			System.out.println("DVD out of stock"); return;
 		}
 		
 		DVD temp = new DVD();
-		temp = searchFor(title);
-		searchFor(title).rent();
+		temp = searchForD(title);
+		searchForD(title).rent();
+		while(itr.hasNext())
+		{
+			if(COlist.iterator().next().getName().equals(name))
+			{
+				COlist.iterator().next().addDVD(temp);
+				f = true;
+			}
+		}
+		if(f == false)
+		{
+			CheckedOut n = new CheckedOut();
+			n.CheckedOut(searchForC(name), temp);
+			COlist.addLast(n);
+		}
 		/*take temp and put into checkedout positional list
 		* test for account existence in checkedout list
 		* create instance node in C/O if none exists
