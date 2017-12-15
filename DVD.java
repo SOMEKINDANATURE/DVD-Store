@@ -1,5 +1,6 @@
+import java.io.Serializable;
 
-public class DVD 
+public class DVD implements Serializable
 {
 	String Title;
 	String stars[];
@@ -9,10 +10,10 @@ public class DVD
 	int count;
 	
 	
-	public DVD(String title, int size, String producer, String director, String pCompany, int count) {
+	public DVD(String title, int amtStars, String producer, String director, String pCompany, int count) {
 		super();
 		Title = title;
-		this.stars = new String[size];
+		this.stars = new String[amtStars];
 		this.prod = producer;
 		this.dir = director;
 		this.company = pCompany;
@@ -25,10 +26,7 @@ public class DVD
 		Title = "Pirates of the Caribbean";
 		this.count = 5;
 		this.stars = new String[3];
-		for(int i = 0; i < stars.length; i++)
-		{
-			stars[i] = "Jack Sparrow";
-		}
+		this.setStar("Johnny Depp", "Orlando Bloom");
 		this.prod = "Jerry Bruckheimer";
 		this.dir = "Gore Verbinski";
 		this.company = "The Walt Disney Company";
@@ -42,20 +40,18 @@ public class DVD
 		Title = title;
 	}
 
-	public String[] getStars() {
-		return stars;
+	public String getStars() {
+	
+	
+		return stars[0] + ", " + stars[1];
 	}
 
-	public void setStar(String star) {
+	public void setStar(String starOne, String starTwo) {
 		//add throw for no more space
-		for(int i = 0; i < this.stars.length; i++)
-			{
-				if(this.stars[i] != null)
-					{
-						this.stars[i] = star;
-						return;
-					}
-			}
+		stars[0] = starOne;
+		stars[1] = starTwo;
+				
+						
 	}
 
 	public String getProd() {
@@ -122,7 +118,7 @@ public class DVD
 	public String toString()
 	{
 		String toString;
-		toString = " " + this.Title + ": [ " + this.count + ", " + this.stars + ", " + this.dir + ", " + this.prod + ", " + 
+		toString = " " + this.Title + ": [ " + this.count + ", " + this.getStars() + ", " + this.dir + ", " + this.prod + ", " + 
 		this.company + " ]";
 		return toString;
 	}
