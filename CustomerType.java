@@ -42,5 +42,17 @@ public class CustomerType extends Person
 		return title;
 	}
 	
+	public String Return(String title)
+	{
+		for(int i = 0; i < checkedOut.length; i++)
+		{
+			if(checkedOut[i] == title)
+			{
+				checkedOut[i] = null;
+				return title;
+			}
+		}
+		return "Item has not been rented by this account."
+	}
 	
 }
