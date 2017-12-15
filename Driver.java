@@ -73,6 +73,25 @@ public class Driver {
 		*/
 	}
 	
+	public void RemoveStock(String title)
+	{
+		Position<DVD> cursor;
+		cursor = DVDlist.first( );
+		
+		 while (cursor != null) { 
+			 if(searchForD(title).Title.equals(title))
+				 {
+				 	System.out.println(searchForD(title).Title);
+				 	DVDlist.remove(cursor);
+				 	return;
+				 }
+				
+		 cursor = DVDlist.after(cursor); // advance to the next position (if any)
+		 }
+		 System.out.println("DVD no longer carried.");
+		 return;
+	}
+	
 	public DVD searchForD(String title)
 	{
 		int counter = 0;
