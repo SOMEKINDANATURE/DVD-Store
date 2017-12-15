@@ -178,11 +178,11 @@ public class Driver {
 	}
 	public static void addCus()
 	{
-		CustomerType jack = new CustomerType("Jack","8778 wallaby way, Sydney", "Jack.Rowell95@gmail.com", 1998);
-		CustomerType Curt = new CustomerType("Curt","2032 Joel dr, Muskego", "Curt.Cherti95@gmail.com", 5085);
-		CustomerType Jason = new CustomerType("Jason","1111 Fake st, Hollywood", "Jason.Poole95@gmail.com", 2018);
-		CustomerType Nate = new CustomerType("Nate","1989 old st, forgotten", "Nate.Rolbiecki@gmail.com", 1372);
-		CustomerType Kyle = new CustomerType("Kyle","2020 vision way, vision", "Kyle.Endl@gmail.com",3675);
+		CustomerType jack = new CustomerType("Jack Rowell","8778 wallaby way, Sydney", "Jack.Rowell95@gmail.com", 1998);
+		CustomerType Curt = new CustomerType("Curt Cherti","2032 Joel dr, Muskego", "Curt.Cherti95@gmail.com", 5085);
+		CustomerType Jason = new CustomerType("Jason Poole","1111 Fake st, Hollywood", "Jason.Poole95@gmail.com", 2018);
+		CustomerType Nate = new CustomerType("Nate Rolbiecki","1989 old st, forgotten", "Nate.Rolbiecki@gmail.com", 1372);
+		CustomerType Kyle = new CustomerType("Kyle Endl","2020 vision way, vision", "Kyle.Endl@gmail.com",3675);
 		cuslist.addFirst(jack);
 		cuslist.addLast(Curt);
 		cuslist.addLast(Jason);
