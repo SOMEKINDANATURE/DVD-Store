@@ -18,6 +18,19 @@ public class CheckedOut
 			
 		}
 	}
+	public void addDVD(DVD d)
+	{
+		if (cnt < 5)
+		{
+			dvd[cnt] = d;
+			cnt++;
+		}
+		else
+		{
+			System.out.println("You cant have more than 5 movies checked out at a single time");
+			
+		}
+	}
 	public void findMovie(String title)
 	{
 		for(int i = cnt; i > 0; i-- )
