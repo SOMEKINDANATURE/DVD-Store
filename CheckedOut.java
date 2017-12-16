@@ -38,12 +38,14 @@ public class CheckedOut
 	{
 		return customer.acct_number;
 	}
-	public static void printCheckedOut()
-	{	Iterator<CheckedOut> itr = COlist.iterator();
-		while(itr.hasNext())
+	public void printChecked()
+	{
+		String s;
+		s = "Name: " + getName() + "\n" +"Account Number " + customer.acct_number + " \n" + "DVD's";
+		for(int i = 0; i < dvd.length; i++)
 		{
-			itr.next().printChecked();
-			
+			System.out.print(dvd[i].toString());
+			System.out.println();
 		}
 	}
 
