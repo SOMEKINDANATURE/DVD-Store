@@ -34,11 +34,36 @@ public class Driver {
 //------------------- End of Main-----------------------------------
 	
 	//----------------------------------------------
-	private static void serializableDVD() {
-		// TODO Auto-generated method stub
+	public static void Return(String title, String name)
+	{
+		Iterator<CheckedOut> itr = COlist.iterator();
 		
-	}
+		searchForD(title).Return();
+		while(itr.hasNext())
+		{
+			if(itr.next().getName().equals(name))
+			{
+				itr.next().findandRemoveMovie(title);
+				if(searchForO(name).dvd == null)
+				{
+					Position<CheckedOut> cursor;
+					cursor = COlist.first( );
+		
+		 			while (cursor != null) 
+		 			{ 
+			 			if(searchForC(name).name.equals(name))
+				 		{
+				 			COlist.remove(cursor);
+				 			return;
+				 		}		 
+		 			}
+		
+				}
+			}
+				
+		}
 
+	}
 	public static void Rent(String title, String name)
 	{
 		boolean f = false;
