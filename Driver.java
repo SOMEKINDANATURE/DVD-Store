@@ -34,6 +34,14 @@ public class Driver {
 //------------------- End of Main-----------------------------------
 	
 	//----------------------------------------------
+	public static void printCheckedOut()
+	{	Iterator<CheckedOut> itr = COlist.iterator();
+		while(itr.hasNext())
+		{
+			itr.next().printChecked();
+			
+		}
+	}
 	public static void Return(String title, String name)
 	{
 		Iterator<CheckedOut> itr = COlist.iterator();
