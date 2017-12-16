@@ -38,6 +38,13 @@ public class CheckedOut
 	{
 		return customer.acct_number;
 	}
-	
+	public static void printCheckedOut()
+	{	Iterator<CheckedOut> itr = COlist.iterator();
+		while(itr.hasNext())
+		{
+			itr.next().printChecked();
+			
+		}
+	}
 
 }
